@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; padding: 20px 0; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <!-- Mobile Menu Icon -->
+      <img src="images/icon-menu.svg" alt="Menu" class="menu-icon">
+      <h2 class="logo">sneakers</h2>
+      
+      <nav class="nav-links">
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="cart-container">
+        <img src="images/icon-cart.svg" alt="Cart" class="cart-icon">
+      </div>
+      <img src="images/image-avatar.png" alt="User Avatar" class="avatar">
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <section class="gallery">
+      <div class="main-image-container">
+        
+        <button class="slider-btn prev-btn"><img src="images/icon-previous.svg" alt="Previous"></button>
+        <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" class="main-image">
+        <button class="slider-btn next-btn"><img src="images/icon-next.svg" alt="Next"></button>
+      </div>
+      
+      <div class="thumbnails">
+        <img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1" class="thumb active">
+        <img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2" class="thumb">
+        <img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3" class="thumb">
+      </div>
+    </section>
+
+    <!-- Product Info) -->
+    <section class="product-info">
+      <h4 class="company-name">Sneaker Company</h4>
+      <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+      <p class="description">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+      
+      <div class="price-section">
+        <div class="current-price-wrapper">
+          <span class="current-price">$125.00</span>
+          <span class="discount">50%</span>
+        </div>
+        <span class="original-price">$250.00</span>
+      </div>
+
+      <!-- Add to Cart -->
+      <div class="add-to-cart-section">
+        <div class="quantity-selector">
+          <button class="qty-btn minus"><img src="images/icon-minus.svg" alt="Minus"></button>
+          <span class="quantity">0</span>
+          <button class="qty-btn plus"><img src="images/icon-plus.svg" alt="Plus"></button>
+        </div>
+        
+        <button class="add-to-cart-btn">
+          <img src="images/icon-cart.svg" alt="Cart Icon" class="btn-cart-icon">
+          Add to cart
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Deshan Disanayaka</a>.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
