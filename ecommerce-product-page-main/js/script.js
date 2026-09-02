@@ -1,4 +1,4 @@
-// 1. පින්තූර මාරු කිරීමේ ක්‍රියාවලිය
+
 const mainImage = document.querySelector('.main-image');
 const thumbnails = document.querySelectorAll('.thumb');
 
@@ -10,7 +10,6 @@ thumbnails.forEach((thumb, index) => {
   });
 });
 
-// 2. භාණ්ඩ ප්‍රමාණය (Quantity) වෙනස් කිරීමේ ක්‍රියාවලිය
 const minusBtn = document.querySelector('.minus');
 const plusBtn = document.querySelector('.plus');
 const quantityDisplay = document.querySelector('.quantity');
@@ -29,7 +28,7 @@ minusBtn.addEventListener('click', () => {
   }
 });
 
-// 3. Mobile මෙනුව Open/Close කිරීම
+
 const menuIcon = document.querySelector('.menu-icon');
 const navLinks = document.querySelector('.nav-links');
 
@@ -37,7 +36,6 @@ menuIcon.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// 4. Cart ක්‍රියාවලිය (Add to Cart, Delete, & Toggle)
 const cartIconBtn = document.querySelector('.cart-icon');
 const cartDropdown = document.querySelector('.cart-dropdown');
 const cartBadge = document.querySelector('.cart-badge');
@@ -46,7 +44,6 @@ const cartItemsContainer = document.querySelector('.cart-items');
 const emptyMsg = document.querySelector('.empty-msg');
 const checkoutBtn = document.querySelector('.checkout-btn');
 
-// Cart එක Open/Close වීම
 cartIconBtn.addEventListener('click', () => {
   if (cartDropdown.style.display === 'none' || cartDropdown.style.display === '') {
     cartDropdown.style.display = 'block';
@@ -55,7 +52,6 @@ cartIconBtn.addEventListener('click', () => {
   }
 });
 
-// "Add to cart" බොත්තම එබූ විට
 addToCartMainBtn.addEventListener('click', () => {
   if (quantity > 0) {
     cartBadge.style.display = 'block';
@@ -78,9 +74,8 @@ addToCartMainBtn.addEventListener('click', () => {
   }
 });
 
-// Delete අයිකන් එක එබූ විට භාණ්ඩය Cart එකෙන් ඉවත් කිරීම (Event Delegation ක්‍රමය)
 cartItemsContainer.addEventListener('click', (event) => {
-  // Click කළේ delete-btn එක නම් පමණක් ක්‍රියාත්මක වීම
+  
   if (event.target.classList.contains('delete-btn')) {
     cartItemsContainer.innerHTML = '';
     emptyMsg.style.display = 'block';
