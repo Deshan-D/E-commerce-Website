@@ -85,3 +85,76 @@ cartItemsContainer.addEventListener('click', (event) => {
     quantityDisplay.textContent = quantity;
   }
 });
+
+
+const productsList = [
+  { id: 1, name: "Classic White Sneakers", category: "men", price: 110.00, image: "images/image-product-1.jpg" },
+  { id: 2, name: "Urban Comfort Walk", category: "women", price: 95.00, image: "images/image-product-2.jpg" },
+  { id: 3, name: "Street Style High-Tops", category: "men", price: 130.00, image: "images/image-product-3.jpg" },
+  { id: 4, name: "Summer Breeze Runners", category: "women", price: 85.00, image: "images/image-product-4.jpg" },
+  { id: 5, name: "Sport Pro Edition", category: "men", price: 140.00, image: "images/image-product-1.jpg" },
+  { id: 6, name: "Casual Everyday Kicks", category: "women", price: 105.00, image: "images/image-product-2.jpg" }
+];
+
+const productGrid = document.getElementById('product-grid');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const searchInput = document.getElementById('search-input');
+
+function displayProducts(products) {
+  productGrid.innerHTML = '';
+  
+  if (products.length === 0) {
+    productGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--dark-grayish-blue);">No products found matching your criteria.</p>';
+    return;
+  }
+
+  products.forEach(product => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <div class="product-card-info">
+        <h3 class="product-card-title">${product.name}</h3>
+        <p class="product-card-price">$${product.price.toFixed(2)}</p>
+        <button class="add-to-cart-small" onclick="alert('${product.name} added to cart!')">Add to Cart</button>
+      </div>
+    `;
+    productGrid.appendChild(card);
+  });
+}
+
+displayProducts(productsList);
+
+// Process (Men / Women / All)
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.filter-btn.active').classList.remove('active');
+    btn.classList.add('active');
+
+    const category = btn.dataset.filter;
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    filterAndSearchProducts(category, searchTerm);
+  });
+});
+
+searchInput.addEventListener('input', (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+  const category = document.querySelector('.filter-btn.active').dataset.filter;
+  
+  filterAndSearchProducts(category, searchTerm);
+});
+
+function filterAndSearchProducts(category, searchTerm) {
+  let filtered = productsList;
+  
+  if (category !== 'all') {
+    filtered = filtered.filter(p => p.category === category);
+  }
+  
+  if (searchTerm) {
+    filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm));
+  }
+  
+  displayProducts(filtered);
+}
