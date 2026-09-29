@@ -275,7 +275,7 @@ button {
   gap: 15px;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 10px 20px rgba(255, 125, 26, 0.25); /* තැඹිලි පාට සෙවනැල්ලක් */
+  box-shadow: 0 10px 20px rgba(255, 125, 26, 0.25);
   transition: opacity 0.3s ease;
 }
 
@@ -480,4 +480,115 @@ button {
     transform: translateX(-50%);
     top: 80px;
   }
+}
+
+/* --- Product Catalog Styles --- */
+.product-catalog {
+  margin-top: 80px;
+  padding-top: 50px;
+  border-top: 1px solid var(--light-grayish-blue);
+}
+
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-filter-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#search-input {
+  padding: 10px 15px;
+  border: 1px solid var(--grayish-blue);
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+}
+
+#search-input:focus {
+  border-color: var(--orange);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--light-grayish-blue);
+  background-color: var(--light-grayish-blue);
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--dark-grayish-blue);
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  background-color: var(--white);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-card-info {
+  padding: 20px;
+}
+
+.product-card-title {
+  font-weight: 700;
+  color: var(--very-dark-blue);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.product-card-price {
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.add-to-cart-small {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-small:hover {
+  background-color: var(--orange);
 }
