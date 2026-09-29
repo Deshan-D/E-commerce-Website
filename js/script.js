@@ -158,3 +158,20 @@ function filterAndSearchProducts(category, searchTerm) {
   
   displayProducts(filtered);
 }
+
+// Avtive Navbar
+const navCollections = document.getElementById('nav-collections');
+const navMen = document.getElementById('nav-men');
+const navWomen = document.getElementById('nav-women');
+
+function triggerNavbarFilter(category) {
+  document.querySelector('.filter-btn.active').classList.remove('active');
+  document.querySelector(`.filter-btn[data-filter="${category}"]`).classList.add('active');
+  
+  //Filter Product
+  filterAndSearchProducts(category, document.getElementById('search-input').value.toLowerCase());
+}
+
+if (navCollections) navCollections.addEventListener('click', () => triggerNavbarFilter('all'));
+if (navMen) navMen.addEventListener('click', () => triggerNavbarFilter('men'));
+if (navWomen) navWomen.addEventListener('click', () => triggerNavbarFilter('women'));
